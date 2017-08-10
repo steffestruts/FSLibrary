@@ -1,0 +1,45 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:library"
+        xmlns:SqlServer="clr-namespace:System.Data.Entity.SqlServer;assembly=EntityFramework.SqlServer" x:Class="library.MainWindow"
+        mc:Ignorable="d"
+        Title="BergsLags biblotek / Låna sidan
+    " Height="600" Width="700" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="label1" Content="Lånare_Name" FontStyle="{DynamicResource {x:Static SystemFonts.CaptionFontStyleKey}}" IsEnabled="False" FontWeight="Bold" FontSize="18" Margin="5,0,0,0"/>
+                <TextBox x:Name="textBox1" Width="259" TextWrapping="Wrap" Text="" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="label" Content="Bok namn :" Width="auto" Margin="5,10,0,0" Grid.Row="1" Grid.Column="0" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Width="459" Grid.Row="1" Margin="15,10,0,0" Grid.Column="0"/>
+                <Button x:Name="button" Content="Sök" Margin="5,10,0,0" Width="75" Click="button_Click" Grid.Row="1" Grid.Column="0"/>
+            </StackPanel>
+            <DataGrid x:Name="dataGrid" Margin="5,5,5,5" Grid.Row="2"/>
+            <StackPanel>
+                <Button x:Name="button1" Margin="5,5,5,5" HorizontalAlignment="Left" Content="Lägg i varukorg" Width="184" FontWeight="Bold" FontStyle="Italic" FontSize="22" Click="button1_Click" Grid.Row="3"/>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid x:Name="dataGrid1" Margin="5,5,5,5" Grid.Row="4"/>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="button2" Content="Låna" Margin="5,5,5,5" HorizontalAlignment="Left" Grid.Row="5" FontSize="18" FontWeight="Bold" FontStyle="Italic" Click="button2_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
